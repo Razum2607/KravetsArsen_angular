@@ -1,0 +1,79 @@
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+.people {
+  margin-top: 100px;
+}
+.people__list {
+  color: #444;
+}
+.people__item:nth-child(odd) {
+  background-color: #dedede;
+}
+.people__item:nth-child(even) {
+  background-color: #eee;
+}
+.people__header {
+  background: #eee;
+  padding: 10px 15px 0;
+}
+.people__headline {
+  font-size: 18px;
+  font-weight: 600;
+}
+.user-logo {
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+.user-logo__img {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.person-in-nutshell {
+  font-size: 20px;
+  padding: 20px 15px;
+  position: relative;
+  min-height: 80px;
+}
+.person-in-nutshell__img-wrap {
+  display: inline-block;
+}
+.person-in-nutshell__fa {
+  display: inline-block;
+  color: #666;
+  font-size: 30px;
+}
+.person-in-nutshell__user-logo {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+}
+@media (max-width: 991px) {
+  .person-in-nutshell__user-logo {
+    position: static;
+  }
+}
+.person-in-detail {
+  font-size: 18px;
+  padding: 20px 80px;
+}
+.person-in-detail__name {
+  font-weight: 600;
+  font-size: 46px;
+  margin-bottom: 20px;
+}
+.person-in-detail__value {
+  font-weight: 600;
+}

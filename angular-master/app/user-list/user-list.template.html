@@ -1,0 +1,124 @@
+<div class="container people">
+
+  <button class="btn btn-default" ng-click="userList.openComponentModal()">Show Chart</button>
+
+  <div class="people__header">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-2 people__headline">Last</div>
+      <div class="col-md-2 people__headline">First</div>
+      <div class="col-md-2 people__headline">Username</div>
+      <div class="col-md-2 people__headline">Phone</div>
+      <div class="col-md-2 people__headline">Location</div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /people__header -->
+  <ul class="people__list">
+    <li class="people__item" ng-repeat="user in userList.users">
+      <div class="person-in-nutshell">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="person-in-nutshell__user-logo user-logo">
+              <img ng-src="{{user.picture.medium}}" alt="" class="user-logo__img img-responsive">
+            </div>
+            <!-- /person-in-nutshell__img-wrap -->
+          </div>
+          <div class="col-md-2">
+            {{user.name.last}}
+          </div>
+          <!-- /col-md-2 -->
+          <div class="col-md-2">
+            {{user.name.first}}
+          </div>
+          <!-- /col-md-2 -->
+          <div class="col-md-2">
+            {{user.login.username}}
+          </div>
+          <!-- /col-md-2 -->
+          <div class="col-md-2">
+            {{user.phone}}
+          </div>
+          <!-- /col-md-2 -->
+          <div class="col-md-2">
+            {{user.location.state}}
+          </div>
+          <!-- /col-md-2 -->
+          <div class="col-md-1">
+            <a href="">
+              <i ng-class="user.email === userList.checkedUser.email ? 'fa-minus' : 'fa-plus'" class="fa person-in-nutshell__fa" aria-hidden="true" ng-click="userList.toggleUserDetails(user)"></i>
+            </a>
+          </div>
+          <!-- /col-md-1 -->
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /person-in-nutshell -->
+      <div class="person-in-detail" ng-show="user.email === userList.checkedUser.email">
+        <div class="person-in-detail__name">{{user.name.first}}
+          <i class="fa" ng-class="user.gender === 'female' ? 'fa-female' : 'fa-male'" aria-hidden="true"></i>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div>
+              <span class="person-in-detail__value">Username</span>
+              <span class="person-in-detail__key">{{user.login.username}}</span>
+            </div>
+            <div>
+              <span class="person-in-detail__value">Registered</span>
+              <span class="person-in-detail__key">{{user.registered}}</span>
+            </div>
+            <div>
+              <span class="person-in-detail__value">Email</span>
+              <span class="person-in-detail__key">{{user.email}}</span>
+            </div>
+          </div>
+          <!-- /col- -->
+          <div class="col-md-3">
+            <div>
+              <span class="person-in-detail__value">Address</span>
+              <span class="person-in-detail__key">{{user.location.state}} {{user.location.street}}</span>
+            </div>
+            <div>
+              <span class="person-in-detail__value">City</span>
+              <span class="person-in-detail__key">{{user.location.city}}</span>
+            </div>
+            <div>
+              <span class="person-in-detail__value">Zipe Code</span>
+              <span class="person-in-detail__key">{{user.location.postcode}}</span>
+            </div>
+          </div>
+          <!-- /col- -->
+          <div class="col-md-3">
+            <div>
+              <span class="person-in-detail__value">Birthday</span>
+              <span class="person-in-detail__key">{{user.dob}}</span>
+            </div>
+            <div>
+              <span class="person-in-detail__value">Phone</span>
+              <span class="person-in-detail__key">{{user.phone}}</span>
+            </div>
+            <div>
+              <span class="person-in-detail__value">Cell</span>
+              <span class="person-in-detail__key">{{user.cell}}</span>
+            </div>
+          </div>
+          <!-- /col- -->
+          <div class="col-md-3">
+            <div class="user-logo">
+              <div class="user-logo__img">
+                <img ng-src="{{user.picture.large}}" alt="" class="user-logo__img img-responsive">
+              </div>
+              <!-- /user-logo__img -->
+            </div>
+            <!-- /person-in-detail__img-wrap user-logo -->
+          </div>
+          <!-- /col -->
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /person-in-detail row -->
+    </li>
+    <!-- /people__item -->
+  </ul>
+  <!-- /people-list -->
+</div>
